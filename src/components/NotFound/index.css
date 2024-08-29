@@ -1,19 +1,28 @@
 .not-found-container {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  padding: 20px;
+  background-color: #000;
 }
+
 .not-found-image {
-  width: 80%;
+  margin-bottom: 15px;
 }
-.not-found-text {
-  font-size: 20px;
-  color: white;
+
+.not-found-heading {
+  font-family: Roboto;
+  font-weight: 600;
+  font-size: 28px;
+  color: #fff;
 }
-.not-found-dec {
-  font-size: 10px;
-  color: white;
+
+.not-found-description {
+  color: #7e858e;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 16px;
+  max-width: 80%;
+  text-align: center;
 }

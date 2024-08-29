@@ -1,57 +1,53 @@
+// import { Link } from 'react-router-dom'
 import {AiFillStar} from 'react-icons/ai'
-import {MdLocationOn, MdWork} from 'react-icons/md'
-import {Link} from 'react-router-dom'
+import {MdLocationOn} from 'react-icons/md'
+import {BsBriefcaseFill} from 'react-icons/bs'
 
+import {Link} from 'react-router-dom/cjs/react-router-dom.min'
 import './index.css'
 
-const JobItems = props => {
-  const {jobItemDetails} = props
+const JobItem = props => {
+  const {jobDetails} = props
   const {
-    id,
-    title,
-    rating,
-    packagePerAnnum,
-    location,
-    jobDescription,
-    employmentType,
     companyLogoUrl,
-  } = jobItemDetails
-
+    employmentType,
+    jobDescription,
+    location,
+    packagePerAnnum,
+    rating,
+    title,
+    id,
+  } = jobDetails
   return (
-    <Link className="job-item-card-link" to={`/jobs/${id}`}>
-      <li className="job-item-card-container">
-        <div className="company-logo-and-job-title-item">
+    <li className="job-item-container">
+      <Link to={`/jobs/${id}`} className="job-link">
+        <div className="job-item-header">
           <img
             className="company-logo-image"
-            src={companyLogoUrl}
             alt="company logo"
+            src={companyLogoUrl}
           />
-          <div className="job-title-and-rating-item">
+          <div className="job-name-rating-container">
             <h1 className="job-title">{title}</h1>
-            <div className="rating-item">
-              <AiFillStar size="18" color="#fbbf24" />
-              <p className="rating">{rating}</p>
+            <div className="star-rating-container">
+              <AiFillStar className="star-icon" />
+              <p className="rating-text">{rating}</p>
             </div>
           </div>
         </div>
-        <div className="location-and-salary-package-item">
-          <div className="location-and-employment-type-item">
-            <div className="location-item">
-              <MdLocationOn size="20" color="white" />
-              <p className="location">{location}</p>
-            </div>
-            <div className="employment-item">
-              <MdWork size="20" color="white" />
-              <p className="employment-type">{employmentType}</p>
-            </div>
-          </div>
-          <p className="salary-package">{packagePerAnnum}</p>
+        <div className="job-item-info-container">
+          <MdLocationOn className="location-icon" />
+          <p>{location}</p>
+          <BsBriefcaseFill className="job-icon" />
+          <p>{employmentType}</p>
+          <p className="salary">{packagePerAnnum}</p>
         </div>
-        <h1 className="description-heading">Description</h1>
+        <hr className="separator" />
+        <h1 className="description-title">Description</h1>
         <p className="job-description">{jobDescription}</p>
-      </li>
-    </Link>
+      </Link>
+    </li>
   )
 }
 
-export default JobItems
+export default JobItem

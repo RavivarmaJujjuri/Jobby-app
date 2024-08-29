@@ -1,231 +1,128 @@
-.jobs-route-container {
-  background-color: black;
-  height: 100vh;
-  overflow-y: hidden;
+.job-route-container {
+  flex-grow: 1;
+  padding: 35px 45px;
+  background-color: #000;
+  display: flex;
+  margin-top: 105px;
 }
 
-.jobs-page-container {
+@media screen and (max-width: 767px) {
+  .job-route-container {
+    padding: 25px;
+    flex-direction: column;
+  }
+}
+
+.profile-filter-group-container {
+  margin-right: 25px;
+}
+
+@media screen and (max-width: 767px) {
+  .profile-filter-group-container {
+    margin-right: 0;
+  }
+}
+
+.search-job-items-container {
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  padding: 20px;
-  height: 85vh;
-  overflow-y: auto;
-}
-.profile-and-filter-section-container {
-  order: 1;
 }
 
-.profile-section-container {
-  padding-bottom: 20px;
-  border-bottom: solid 2px rgb(68, 68, 68);
-}
-
-.profile-container {
-  padding: 15px;
-  background-image: url('https://assets.ccbp.in/frontend/react-js/profile-bg.png');
-  background-size: cover;
-  width: 100%;
-  border-radius: 25px;
-  background-color: white;
-}
-
-.profile-logo-image {
-  width: 50px;
-}
-
-.profile-name {
-  font-size: 16px;
-  color: #4f46e5;
-}
-
-.profile-short-bio {
-  font-size: 12px;
-  color: #726ddd;
-}
-.retry-button-container {
+.searchbar-container {
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: 30vh;
-  padding: 20px;
-}
-.retry-button {
-  background-color: rgb(39, 42, 245);
-  padding: 5px 12px;
-  border-radius: 3px;
-  border: none;
-  cursor: pointer;
-  color: white;
-}
-.loader-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 20vh;
-}
-.employment-types-container {
-  padding-left: 0px;
-  border-bottom: solid 2px rgb(68, 68, 68);
-  padding-bottom: 20px;
-}
-.employment-heading {
-  font-size: 17px;
-  color: white;
-}
-.employment-item {
-  list-style: none;
-}
-.check-box-element {
-  width: 15px;
-  height: 15px;
-}
-.employment-label {
-  padding-left: 8px;
-  color: white;
-  font-size: 13px;
+  max-width: 650px;
+  border: 1px solid #475569;
+  overflow: hidden;
+  border-radius: 4px;
 }
 
-.salary-range-container {
-  padding-left: 0px;
-  border-bottom: solid 2px rgb(68, 68, 68);
-  padding-bottom: 20px;
-}
-.salary-range-heading {
-  font-size: 17px;
-  color: white;
-}
-.salary-range-item {
-  list-style: none;
-}
-
-.radio-button {
-  height: 15px;
-  width: 15px;
-}
-.salary-range-label {
-  padding-left: 8px;
-  color: white;
-  font-size: 13px;
-}
-.search-section-container {
-  display: flex;
-  width: 100%;
-  padding-bottom: 15px;
-}
-
-.search-container {
-  display: flex;
-  align-items: center;
-  border: 2px solid rgb(100, 100, 100);
-  border-radius: 5px;
-  width: 100%;
-  max-width: 320px;
-}
-.search-input {
-  padding: 10px 5px;
-  border: none;
-  background-color: black;
-  outline: none;
-  color: white;
-  width: 100%;
-}
-.search-button {
-  background: none;
-  background-color: rgb(100, 100, 100);
-  border: none;
-}
-.search-icon {
+.searchbar-container input {
   padding: 10px;
-  color: white;
-  height: 33px;
-  width: 40px;
-}
-.jobs-main-section-container {
-  order: 1;
-}
-
-.jobs-list-section-container {
-}
-
-.not-found-job-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 20px;
-}
-.not-found-job-image {
-  width: 80%;
-  max-width: 400px;
-}
-.not-found-job-text {
-  font-size: 20px;
-  color: white;
-}
-.not-found-job-dec {
-  font-size: 10px;
-  color: white;
-}
-.jobs-failure-view-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 20px;
-}
-.jobs-failure-image {
-  width: 80%;
-  max-width: 400px;
-}
-.jobs-failure-error-text {
-  font-size: 20px;
-  color: white;
-}
-.jobs-failure-dec {
-  font-size: 10px;
-  color: white;
-}
-.jobs-failure-retry-button {
-  background-color: rgb(39, 42, 245);
-  padding: 5px 12px;
-  border-radius: 3px;
+  flex-grow: 1;
   border: none;
+  background-color: transparent;
+  outline: none;
+  color: #cbd5e1;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.search-icon-container {
+  width: 43px;
+  height: 43px;
+  position: relative;
+  background-color: #202020;
+}
+
+.search-icon-container button {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: none;
+  outline: none;
+  background-color: transparent;
   cursor: pointer;
-  color: white;
 }
 
-.loader-job-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 60vh;
+.search-icon {
+  color: #f1f5f9;
+  width: 15px;
+  height: 15px;
 }
 
-.no-job {
-  color: aliceblue;
-  font-size: 50px;
+.jobs-list-items-container {
+  padding-left: 0;
+  list-style: none;
 }
-@media screen and (min-width: 576px) {
-  .jobs-page-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-    flex-wrap: wrap;
-    padding: 30px;
-  }
-  .profile-and-filter-section-container {
-    width: 30%;
-    max-width: 260px;
-  }
-  .jobs-main-section-container {
-    width: 70%;
-    max-width: 800px;
-    padding-left: 30px;
-  }
+
+.separator {
+  border: 1px solid #7e858e;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.loader-container {
+  align-self: center;
+  margin: auto;
+}
+
+.jobs-failure-view-container {
+  align-self: center;
+  text-align: center;
+  color: #f1f5f9;
+  margin: auto 0;
+}
+
+.jobs-failure-view-container img {
+  width: 100%;
+  max-width: 380px;
+}
+
+.jobs-failure-view-container h1 {
+  font-family: Roboto;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.jobs-failure-view-container p {
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 400;
+  color: #7e858e;
+}
+
+.retry-button {
+  padding: 12px 24px;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  background-color: #4f46e5;
+  border-radius: 8px;
+  cursor: pointer;
 }

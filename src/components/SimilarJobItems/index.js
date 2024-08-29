@@ -1,65 +1,46 @@
 import {AiFillStar} from 'react-icons/ai'
-import {MdLocationOn, MdWork} from 'react-icons/md'
-import {Link} from 'react-router-dom'
+import {MdLocationOn} from 'react-icons/md'
+import {BsBriefcaseFill} from 'react-icons/bs'
 
 import './index.css'
 
-const SimilarJobItems = props => {
-  const {similarJobsDetails, getSimilarJob} = props
+const SimilarJobs = props => {
+  const {jobDetails} = props
   const {
     companyLogoUrl,
+    title,
+    rating,
+    location,
     employmentType,
     jobDescription,
-    location,
-    rating,
-    title,
-    id,
-  } = similarJobsDetails
-
-  const onClickSimilarJob = () => {
-    getSimilarJob(id)
-  }
+  } = jobDetails
 
   return (
-    <Link
-      className="similar-job-item-card-main-container"
-      onClick={onClickSimilarJob}
-      to={`/jobs/${id}`}
-    >
-      <li className="similar-job-item-card-container">
-        <div className="similar-job-item-card-container">
-          <div className="similar-job-company-logo-and-job-title-item">
-            <img
-              className="similar-job-company-logo-image"
-              src={companyLogoUrl}
-              alt="similar job company logo"
-            />
-            <div className="similar-job-title-and-rating-item">
-              <h1 className="similar-job-title">{title}</h1>
-              <div className="similar-job-rating-item">
-                <AiFillStar size="18" color="#fbbf24" />
-                <p className="similar-job-rating">{rating}</p>
-              </div>
-            </div>
-          </div>
-          <h1 className="similar-job-description-heading">Description</h1>
-          <p className="similar-job-description">{jobDescription}</p>
-          <div className="similar-job-location-and-salary-package-item">
-            <div className="similar-job-location-and-employment-type-item">
-              <div className="similar-job-location-item">
-                <MdLocationOn size="20" color="white" />
-                <p className="similar-job-location">{location}</p>
-              </div>
-              <div className="similar-job-employment-item">
-                <MdWork size="20" color="white" />
-                <p className="similar-job-employment-type">{employmentType}</p>
-              </div>
-            </div>
+    <li className="similar-job-container">
+      <div className="job-item-header">
+        <img
+          className="company-logo-image"
+          alt="similar job company logo"
+          src={companyLogoUrl}
+        />
+        <div className="job-name-rating-container">
+          <h1 className="job-title">{title}</h1>
+          <div className="star-rating-container">
+            <AiFillStar className="star-icon" />
+            <p className="rating-text">{rating}</p>
           </div>
         </div>
-      </li>
-    </Link>
+      </div>
+      <h1 className="description-title">Description</h1>
+      <p className="job-description">{jobDescription}</p>
+      <div className="job-item-info-container">
+        <MdLocationOn className="location-icon" />
+        <p>{location}</p>
+        <BsBriefcaseFill className="job-icon" />
+        <p>{employmentType}</p>
+      </div>
+    </li>
   )
 }
 
-export default SimilarJobItems
+export default SimilarJobs
